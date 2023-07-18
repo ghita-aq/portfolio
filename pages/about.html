@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Ghita Aqasbi | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <style>
+/* experinces */
+.container{
+    position: relative;
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+.exp-des{
+    position: relative;
+    width: 100%;
+}
+.experiences{
+    position: relative;
+    width: 100%;
+    
+    /* padding: 20px; */
+    /* display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 30px; */
+}
+.experiences>p{
+    text-align: center;
+}
+.experiences .exp{
+    background-color: #2e4c72;
+    border-top: 2px solid var(--shining-blue);
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 7px 25px var(--dark-blue);
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.describes h2{
+    color: var(--shining-blue);
+}
+.describes span{
+    color: var(--shining-blue);
+    font-weight:lighter;
+}
+.describes p{
+    margin-top: 10px;
+}
+.describes .notice{
+    color: lightgray;
+}
+.experiences .exp .describes a{
+    background-image: linear-gradient(to right, #2e4c72 0%, var(--shining-blue)  51%, #314755  100%);
+    /* border:1px solid var(--shining-blue); */
+    border-radius: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding: 5px 15px 5px 15px;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    /* box-shadow: 0 0 20px var(--shining-blue); */
+}
+.experiences .exp .describes a:hover{
+    background-position: right center; /* change the direction of the change here */
+    /* color: var(--shining-blue); */
+    text-decoration: none;
+}    
+.skills,
+.experiences{
+    display: none;
+}       
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" id="logo">Logo</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href=""><ion-icon name="language-outline"></ion-icon></a></li>
+
+        </ul>
+    </header>
+
+    
+    <section class="container">
+        <div class="exp-des">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore nisi quo quis ipsam laboriosam dolorem officia sint consectetur, iste adipisci nihil officiis tenetur sunt, obcaecati in excepturi ipsum aspernatur. Repellendus.</p>
+            <ul class="nav">
+                <li><button onclick="showEducation()">Education</button></li>
+                <li><button onclick="showExperiences()">Experience</button></li>
+                <li><button onclick="showSkills()">Skills</button></li>
+            </ul>
+        </div>
+
+
+        <div class="result">
+        <div class="experiences">
+            <div class="exp">
+                <div class="describes">
+                    <h2>Web Developper <span class="notice">(Internship)</span></h2>
+                    <span>Devpub Solution</span>
+                    <p>a pagraphe that describes what i've done khdsfkhdklhhfdgl kjhrkljekl iojterjt pojpoity oyipotiy </p>
+                </div>
+            </div>
+            <div class="exp">
+                <div class="describes">
+                    <h2>Web Developper <span class="notice">(Internship)</span></h2>
+                    <span>Devpub Solution</span>
+                    <p>a pagraphe that describes what i've done khdsfkhdklhhfdgl kjhrkljekl iojterjt pojpoity oyipotiy </p>
+                </div>
+            </div>
+            <div class="exp">
+                <div class="describes">
+                    <h2>Web Developper <span class="notice">(Internship)</span></h2>
+                    <span>Devpub Solution</span>
+                    <p>a pagraphe that describes what i've done khdsfkhdklhhfdgl kjhrkljekl iojterjt pojpoity oyipotiy </p>
+                </div>
+            </div>
+            <p class="notice">Contact me for full experience details.</p>
+        </div>
+
+        <div class="education">edu</div>
+        <div class="skills">skils</div>
+    </div>
+    </section>
+
+    <!-- <section id="skills">
+        <h1>Skills</h1>
+        <p>l'm in constant pursuit of skills that can help develop me into a well rounded professional.</p>
+    </section> -->
+
+
+
+
+    <footer>
+        <p><a href="projects.html">Continue To Projects<ion-icon name="arrow-forward-outline"></ion-icon></a></p>
+        <ul id="contact-links">
+            <li><a href="https://www.linkedin.com/in/aqasbighita/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="mailto:aqasbi.ghita@gmail.com"><ion-icon name="logo-google"></ion-icon></a></li>
+        </ul>
+</footer>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+    // r=document.getElementsByClassName('result')[0]
+    function showExperiences(){
+        e=document.getElementsByClassName('experiences')[0]
+        e.style='display:block'
+
+        edu=document.getElementsByClassName('education')[0]
+        edu.style='display:none'
+
+        s=document.getElementsByClassName('skills')[0]
+        s.style='display:none'
+    }
+    function showEducation(){
+        e=document.getElementsByClassName('experiences')[0]
+        e.style='display:none'
+
+        edu=document.getElementsByClassName('education')[0]
+        edu.style='display:block'
+
+        s=document.getElementsByClassName('skills')[0]
+        s.style='display:none'
+    }
+    function showSkills(){
+        e=document.getElementsByClassName('experiences')[0]
+        e.style='display:none'
+
+        edu=document.getElementsByClassName('education')[0]
+        edu.style='display:none'
+
+        s=document.getElementsByClassName('skills')[0]
+        s.style='display:block'
+    }
+</script>
+</body>
+</html>
