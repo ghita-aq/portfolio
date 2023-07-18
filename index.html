@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghita Aqasbi Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+:root {
+    --dark-blue:#243c5a;
+    --shining-blue:#03fbe9;
+    --text-color:white
+}
+
+#foo {
+    color: var(--dark-blue);
+    color: var(--shining-blue);
+    color: var(--text-color);
+}
+
+body{
+    background-color: var(--dark-blue);
+    color: var(--text-color)
+}
+
+/* menu */
+header{
+    background-color: #2e4c72;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+header #logo{
+    text-decoration: none;
+    color: var(--shining-blue);
+    display: block;
+    text-align: center;
+}
+header ul,
+#contact-links{
+    list-style: none;
+}
+header ul li
+{
+    display: inline-block;
+    position: relative;
+    width: 100px;
+
+}
+header ul li a{
+text-decoration: none;
+color: var(--shining-blue);
+display: block;
+text-align: center;
+
+}
+/* herosection */
+#herosection{
+    height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+}
+/* footer */
+footer{
+    margin: 200px; 
+    bottom: 0;
+}
+footer h2{
+    margin-bottom: 20px;
+}
+
+#contact-links li{
+    display: inline-block;
+    position: relative;
+    width: 50px;
+}
+#contact-links li a{
+    text-decoration: none;
+    color: var(--shining-blue);
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" id="logo">Logo</a>
+        <ul>
+            <li><a href="#herosection">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href=""><ion-icon name="language-outline"></ion-icon></a></li>
+
+        </ul>
+    </header>
+
+    <section id="herosection">
+        <p>Hello! I'm Ghita Aqasbi</p>
+        <p>A Full Stack Web Developer</p>
+        <p>Recent graduate excited to start my carrer on the professional word. Open to new job opportunities and project collaborations!</p>
+    </section>
+
+    <section id="experiences"></section>
+
+    <section id="skills"></section>
+
+    <section id="projects"></section>
+    <footer>
+        <h2>Contact</h2>
+        <div class="text">
+            <p>Currently, I'm actively seeking opportunities to join a dynamic and collaborative cross-functional team. If you have a project in mind or you're looking for a driven full-stack developer to join your team, let's connect and discuss how we can achieve great things together!</p>
+            <br>
+            <p>aqasbi.ghita@gmail.com</p>
+            <br>
+            <ul id="contact-links">
+                <li><a href="https://www.linkedin.com/in/aqasbighita/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                <li><a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon></a></li>
+                <li><a href="mailto:aqasbi.ghita@gmail.com"><ion-icon name="logo-google"></ion-icon></a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
