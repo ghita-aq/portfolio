@@ -19,8 +19,9 @@
 body{
     background-color: var(--dark-blue);
     color: var(--text-color);
-    height: 100vh;
-    max-height: 100vh;
+    /* height: 100vh;
+    max-height: 100vh; */
+    height: 100%;
     width: 100%
 }
 section{
@@ -33,7 +34,7 @@ h1{
 }
 /* menu */
 header{
-    /* background-color: #2e4c72; */
+    background-color: #2e4c72;
     height: 60px;
     display: flex;
     justify-content: space-around;
@@ -54,7 +55,6 @@ header ul li
     display: inline-block;
     position: relative;
     width: 100px;
-
 }
 header ul li a{
 text-decoration: none;
@@ -76,7 +76,7 @@ footer p a{
     color: var(--text-color);
 }
 footer p a:hover{
-    color: var(--shining-blue);
+    /* color: var(--shining-blue); */
     text-decoration: underline;
 }
 footer p a ion-icon{

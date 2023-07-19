@@ -13,7 +13,6 @@
 /* experinces */
 .container{
     position: relative;
-    /* width: 100%; */
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 30px;
@@ -21,12 +20,43 @@
 .exp-des{
     position: relative;
     width: 100%;
+    font-size: 18px;
 }
+.exp-des ul{
+    list-style: none;
+    padding: 12px 0 12px 0;
+
+}
+.exp-des ul li{
+    width: 130px;
+    padding: 12px 0 12px 0;
+}
+.exp-des ul li button{
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+.exp-des ul li span{
+    font-size: 20px;
+    
+}
+.exp-des ul li:hover,
+.exp-des ul li:hover button,
+.selected,
+.selected .btn{
+    color: var(--shining-blue);
+}
+
+
+/* experiences */
 .experiences{
     position: relative;
     width: 100%;
-    
-    /* padding: 20px; */
+        /* padding: 20px; */
     /* display: grid;
     grid-template-columns: repeat(1,1fr);
     grid-gap: 30px; */
@@ -83,7 +113,8 @@
 .skills,
 .experiences{
     display: none;
-}       
+}     
+
     </style>
 </head>
 <body>
@@ -101,16 +132,19 @@
     
     <section class="container">
         <div class="exp-des">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore nisi quo quis ipsam laboriosam dolorem officia sint consectetur, iste adipisci nihil officiis tenetur sunt, obcaecati in excepturi ipsum aspernatur. Repellendus.</p>
+            <h1>About Me</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, provident accusamus dicta alias saepe aliquid eaque quis quas dolor sit vitae nostrum ullam numquam similique tenetur modi ipsam perferendis voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore nisi quo quis ipsam laboriosam dolorem officia sint consectetur, iste adipisci nihil officiis tenetur sunt, obcaecati in excepturi ipsum aspernatur. Repellendus.</p>
             <ul class="nav">
-                <li><button onclick="showEducation()">Education</button></li>
-                <li><button onclick="showExperiences()">Experience</button></li>
-                <li><button onclick="showSkills()">Skills</button></li>
+                <li class="selected"><span><ion-icon name="return-down-forward-outline"></ion-icon></span><button class="btn" onclick="showEducation(event)">Education</button></li>
+                <li><span><ion-icon name="return-down-forward-outline"></ion-icon></span><button onclick="showExperiences(event)">Experience</button></li>
+                <li><span><ion-icon name="return-down-forward-outline"></ion-icon></span><button onclick="showSkills(event)">Skills</button></li>
             </ul>
+            
         </div>
 
 
         <div class="result">
+        <div class="education">edu</div>
         <div class="experiences">
             <div class="exp">
                 <div class="describes">
@@ -135,19 +169,12 @@
             </div>
             <p class="notice">Contact me for full experience details.</p>
         </div>
-
-        <div class="education">edu</div>
+        
         <div class="skills">skils</div>
     </div>
     </section>
 
-    <!-- <section id="skills">
-        <h1>Skills</h1>
-        <p>l'm in constant pursuit of skills that can help develop me into a well rounded professional.</p>
-    </section> -->
-
-
-
+  
 
     <footer>
         <p><a href="projects.html">Continue To Projects<ion-icon name="arrow-forward-outline"></ion-icon></a></p>
@@ -156,23 +183,13 @@
             <li><a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon></a></li>
             <li><a href="mailto:aqasbi.ghita@gmail.com"><ion-icon name="logo-google"></ion-icon></a></li>
         </ul>
-</footer>
+    </footer>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <script>
     // r=document.getElementsByClassName('result')[0]
-    function showExperiences(){
-        e=document.getElementsByClassName('experiences')[0]
-        e.style='display:block'
-
-        edu=document.getElementsByClassName('education')[0]
-        edu.style='display:none'
-
-        s=document.getElementsByClassName('skills')[0]
-        s.style='display:none'
-    }
-    function showEducation(){
+    function showEducation(event){
         e=document.getElementsByClassName('experiences')[0]
         e.style='display:none'
 
@@ -181,8 +198,45 @@
 
         s=document.getElementsByClassName('skills')[0]
         s.style='display:none'
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            if (button !== event.target) {
+            button.parentElement.classList.remove('selected')
+            button.classList.remove('btn')
+
+            } else {
+            event.target.parentElement.classList.add('selected')
+            event.target.classList.add('btn')
+            }
+        })
+}
+    
+    function showExperiences(event){
+        e=document.getElementsByClassName('experiences')[0]
+        e.style='display:block'
+
+        edu=document.getElementsByClassName('education')[0]
+        edu.style='display:none'
+
+        s=document.getElementsByClassName('skills')[0]
+        s.style='display:none'
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            if (button !== event.target) {
+            button.parentElement.classList.remove('selected')
+            button.classList.remove('btn')
+
+            } else {
+            event.target.parentElement.classList.add('selected')
+            event.target.classList.add('btn')
+
+            }
+        })
     }
-    function showSkills(){
+    
+    function showSkills(event){
         e=document.getElementsByClassName('experiences')[0]
         e.style='display:none'
 
@@ -191,6 +245,19 @@
 
         s=document.getElementsByClassName('skills')[0]
         s.style='display:block'
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            if (button !== event.target) {
+            button.parentElement.classList.remove('selected')
+            button.classList.remove('btn')
+
+            } else {
+            event.target.parentElement.classList.add('selected')
+            event.target.classList.add('btn')
+
+            }
+        })
     }
 </script>
 </body>
