@@ -21,7 +21,8 @@
 
     </style>
 </head>
-<body id="c"> 
+<body > 
+    <!-- <canvas id="c"></canvas> -->
     <header>
         <a href="index.html" id="logo">Logo</a>
         <ul>
@@ -53,7 +54,32 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script>
+
     var c =document.getElementById('c')
+    ctx=c.getContext('2d')
+    c.height=window.innerHeight
+    c.width=window.innerWidth
+    var binary="01"
+    binary=binary.split("")
+    font_size=20
+    columns=c.width/font_size
+    var drops=[]
+    for(var x=0;x<columns;x++){
+        drops[x]=1
+    }
+    function darw(){
+        ctx.fillStyle='rgba(0,0,0,0.05)'
+        ctx.fillRect(0,0,c.width,c.ENTITY_NODE)
+        ctx.fillStyle="blue"
+        ctx.font=font_size+"px arial"
+        for(var x=0;x<drops.columns;x++){
+            text=binary[Math.floor(Math.random()+binary.length)]
+            ctx.fillText(text,i*font_size,drops[i]*font_size)
+            if()
+
+        }
+    }
+
 </script>
 </body>
 </html>
