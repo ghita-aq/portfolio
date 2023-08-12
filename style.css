@@ -5,9 +5,10 @@
     font-family: 'Dosis', sans-serif;
 }
 :root {
-    --dark-blue:#243c5a;
-    --shining-blue:#03fbe9;
-    --text-color:white
+    --dark-blue:#3e3061;
+    --shining-blue:#f0249f;
+    --light-purple:#b87de9;
+    --text-color:#e6e1db;
 }
 
 #foo {
@@ -16,14 +17,41 @@
     color: var(--text-color);
 }
 
-body{
-    background-color: var(--dark-blue);
-    color: var(--text-color);
-    /* height: 100vh;
-    max-height: 100vh; */
+  body {
+    /* background-image:linear-gradient(
+      45deg,
+      #11071f,
+      #3e3061,
+      #b87de9,
+       #f0249f 
+    ); */
+    /* background-size: 400%;
+    background-position: left;
+    transition: background-position 1s;
+    animation: bg-animation 5s infinite alternate; */
+    background-color: #11071f;
+    width: 100%;
+    color: #fff;
+   height: 100vh;
+  } 
+  /* @keyframes bg-animation{
+    0%{background-position: left ;}
+    100%{background-position: right ;}
+  } */
+
+  .grid{
+    
+    position: absolute;
     height: 100%;
-    width: 100%
-}
+    width: 100%;
+    background-image: 
+    linear-gradient(var(--text-color) 0.01em, transparent 0.1em), 
+    linear-gradient(90deg, var(--text-color) 0.01em, transparent 0.1em);
+    background-size: 6em 6em;
+    backdrop-filter: 1rem;
+    opacity: .2;
+    overflow:visible;
+  }
 section{
     margin: 100px 200px 100px 200px; 
 }
@@ -34,7 +62,10 @@ h1{
 }
 /* menu */
 header{
-    background-color: #2e4c72;
+    /* background: rgba(184, 125, 233, 0.3);
+    backdrop-filter: blur(0.5em); */
+margin: 8px 16px 8px 16px;
+    font-size: 20px;
     height: 60px;
     display: flex;
     justify-content: space-around;
@@ -42,7 +73,7 @@ header{
 }
 header #logo{
     text-decoration: none;
-    color: var(--shining-blue);
+    color: var(--text-color);
     display: block;
     text-align: center;
 }
@@ -58,7 +89,7 @@ header ul li
 }
 header ul li a{
 text-decoration: none;
-color: var(--shining-blue);
+color: var(--text-color);
 display: block;
 text-align: center;
 

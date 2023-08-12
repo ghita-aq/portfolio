@@ -9,10 +9,104 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <style>
+        body{
+            height: 100%;
+        }
+.projects{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
 
+.project-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* box-shadow: 0 7px 25px var(--dark-blue); */
+    border-radius: 20px;
+    position: relative;
+    border-radius: 20px;
+    padding: 60px 0 60px 0;
+    /* padding: 30px; */
+    /* cursor: pointer; */
+    
+}
+/* .project-card:hover{
+    background: hsl(0 0% 100% / 0.30);
+    backdrop-filter: blur(0.5em);
+}
+.project-card:hover h2{
+    color: var(--shining-blue);
+} */
+.project-card img{
+    width: 50%;
+    border-radius: 10px;
+    /* box-shadow: 0 0 32px 0 var(--shining-blue); */
+}
+.project-card .des{
+    width: 50%;
+    margin-left: 30px;
+    text-align: right;
+}
+.project-card .des-left{
+    width: 50%;
+    margin-right: 30px;
+    text-align: left;
+}
+.des h2{
+    color: var(--text-color);
+}
+.des p,.des-left p {
+    margin-top: 10px;
+    text-align: left;
+    background: rgba(184, 125, 233, 0.3);
+    backdrop-filter: blur(2.5em);
+    border-radius: 15px;
+    padding: 25px;
+    margin-left: -80px;
+
+}
+.des-left p{
+    margin-left: 0px;
+    margin-right: -80px;
+}
+.des a,.des-left a{
+    margin-top: 10px;
+
+    text-decoration: none;
+    color: var(--shining-blue);
+}
+.des a:hover{
+    text-decoration:underline;
+}
+.des span,.des-left span{
+    
+    /* background-image: linear-gradient(to right, var(--dark-blue) 0%, var(--shining-blue)  51%, #314755  100%); */
+    /* background-color: var(--text-color); */
+    border:none;
+    border-radius: 10px;
+    color: var(--shining-blue);
+    /* background-color: ; */
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding: 5px 15px 5px 15px;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    /* box-shadow: 0 0 20px var(--shining-blue); */
+}
+/* .des button:hover{
+    background-position: right center;
+} */
     </style>
 </head>
 <body>
+  <div class="grid"></div>
+
     <header>
         <a href="../index.html" id="logo">Logo</a>
         <ul>
@@ -25,8 +119,46 @@
     </header>
 
     <section>
-        <h1>Projects.</h1>
+        <h1>Projects</h1>
 
+    <div class="projects">
+
+            <div class="project-card">
+                <div class="des-left">
+                    <h2>Portfolio</h2>
+                    <!-- <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a> -->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, suscipit voluptatibus accusantium ab id nemo aliquam nesciunt iusto ratione quae iste quos quisquam incidunt consequuntur doloribus magni eos ipsam tempore?</p>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <img src="../img/c.png" alt="">
+            </div>
+
+            <div class="project-card">
+                <img src="../img/c.png" alt="">
+                <div class="des">
+                    <h2>Portfolio</h2>
+                    <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, suscipit voluptatibus accusantium ab id nemo aliquam nesciunt iusto ratione quae iste quos quisquam incidunt consequuntur doloribus magni eos ipsam tempore?</p>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>     
+            </div>
+
+            <div class="project-card">
+                <div class="des-left">
+                    <h2>Portfolio</h2>
+                    <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, suscipit voluptatibus accusantium ab id nemo aliquam nesciunt iusto ratione quae iste quos quisquam incidunt consequuntur doloribus magni eos ipsam tempore?</p>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <img src="../img/c.png" alt="">
+            </div>
+    </div>
     </section>
 
     <footer>

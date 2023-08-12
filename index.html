@@ -21,8 +21,8 @@
 
     </style>
 </head>
-<body > 
-    <!-- <canvas id="c"></canvas> -->
+<body> 
+  <div class="grid"></div>
     <header>
         <a href="index.html" id="logo">Logo</a>
         <ul>
@@ -35,7 +35,7 @@
     </header>
 
     <section id="herosection">
-        <p>Hello! I'm Ghita Aqasbi</p>
+        <h1>Hello! I'm Ghita Aqasbi</h1>
         <p>A Full Stack Web Developer</p>
         <p>Recent graduate excited to start my carrer on the professional word. Open to new job opportunities and project collaborations!</p>
     </section>
@@ -54,31 +54,35 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script>
+  var c = document.getElementById('c');
+  var ctx = c.getContext('2d');
+  c.height = window.innerHeight;
+  c.width = window.innerWidth;
+  var binary = "01";
+  binary = binary.split("");
+  var font_size = 14;
+  var columns = c.width / font_size;
+  var drops = [];
+  for (var x = 0; x < columns; x++) {
+    drops[x] = 1;
+  }
 
-    var c =document.getElementById('c')
-    ctx=c.getContext('2d')
-    c.height=window.innerHeight
-    c.width=window.innerWidth
-    var binary="01"
-    binary=binary.split("")
-    font_size=20
-    columns=c.width/font_size
-    var drops=[]
-    for(var x=0;x<columns;x++){
-        drops[x]=1
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, c.width, c.height); // Fixed the parameter to c.height
+    ctx.fillStyle = "#03fbe9";
+    ctx.font = font_size + "px arial";
+    for (var x = 0; x < drops.length; x++) { // Fixed the loop condition
+      var text = binary[Math.floor(Math.random() * binary.length)];
+      ctx.fillText(text, x * font_size, drops[x] * font_size);
+      if (drops[x] * font_size > c.height && Math.random() > 0.975) {
+        drops[x] = 0;
+      }
+      drops[x]++;
     }
-    function darw(){
-        ctx.fillStyle='rgba(0,0,0,0.05)'
-        ctx.fillRect(0,0,c.width,c.ENTITY_NODE)
-        ctx.fillStyle="blue"
-        ctx.font=font_size+"px arial"
-        for(var x=0;x<drops.columns;x++){
-            text=binary[Math.floor(Math.random()+binary.length)]
-            ctx.fillText(text,i*font_size,drops[i]*font_size)
-            if()
+  }
 
-        }
-    }
+  setInterval(draw, 120);
 
 </script>
 </body>
