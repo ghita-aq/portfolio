@@ -10,25 +10,97 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
 
     <style>
+        section{
+            margin: 50px 200px;  
+        }
+        form{   
+            margin: 50px 0px;
+        }
+        form div{
+            display: flex;
+            flex-direction: column;
+        }
+        form input,form textarea{
+            background-color: transparent;
+            margin-bottom:30px;
+            border: 1px solid var(--shining-blue);
+            padding: 24px 21px;
+            color: var(--text-color);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        ::placeholder{
+            color: var(--text-color);
+            font-size: 16px;
+        }
+        form input:focus,
+        form input:hover,
+        form textarea:focus,
+        form textarea:hover
+        {
+            background-color:#0b0911;
+            border: 1px dashed var(--light-purple);
+            color: var(--text-color);
+        }
+        form button{
+            text-align: center;
+            display:block;
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: var(--text-color);
+            color: var(--dark-blue);
+            font-weight:bolder;
+            cursor: pointer;
+        }  
+        @media (max-width: 992px) {
+        section {
+            margin: 50px 100px 
+        }
+} 
+        @media (max-width: 768px) {
+            section {
+                margin: 50px 50px
+            }
+        }
 
     </style>
 </head>
 <body>
+    <div class="grid"></div>
+ 
     <header>
         <a href="../index.html" id="logo">Logo</a>
-        <ul>
+        <ul id="pc-menu">
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="tools">
             <li><a href=""><ion-icon name="language-outline"></ion-icon></a></li>
-
+            <li><a href=""><ion-icon name="sunny-outline"></ion-icon></a></li>
+            <li id="mobile-menu" onclick="mobilemenu()"><a href="#" ><ion-icon name="grid-outline"></ion-icon></a></li>
         </ul>
     </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <ul class="mobile-menu">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
     <section>
         <h1>Contact</h1>
-        <p>Get in touch or shoot me an email directly on aqasbi.ghita@gmail.com</p>
-        <form>
-
+        <p>Get in touch or shoot me an email directly on <b>aqasbi.ghita@gmail.com</b></p>
+        <form action="mailto:aqasbi.ghita@gmail.com">
+            <div>
+            <input type="text" name="name" id="" placeholder="Name" required>
+            <input type="email" name="email" id="" placeholder="Email" required>
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
@@ -43,5 +115,28 @@
     </footer>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// mobile menu
+const mobileMenuButton = document.getElementById('mobile-menu');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+function mobilemenu() {
+    mobileMenuOverlay.classList.toggle('active');
+}
+
+mobileMenuOverlay.addEventListener('click', () => {
+    mobileMenuOverlay.classList.remove('active');
+});
+</script>
 </body>
 </html>

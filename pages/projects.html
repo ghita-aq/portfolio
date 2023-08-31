@@ -9,9 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <style>
-        body{
-            height: 100%;
-        }
+
 .projects{
     position: relative;
     width: 100%;
@@ -23,37 +21,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* box-shadow: 0 7px 25px var(--dark-blue); */
     border-radius: 20px;
     position: relative;
     border-radius: 20px;
-    padding: 60px 0 60px 0;
-    /* padding: 30px; */
-    /* cursor: pointer; */
-    
+    padding: 60px 0 60px 0;  
 }
-/* .project-card:hover{
-    background: hsl(0 0% 100% / 0.30);
-    backdrop-filter: blur(0.5em);
-}
-.project-card:hover h2{
-    color: var(--shining-blue);
-} */
+
 .project-card img{
     width: 50%;
-    border-radius: 10px;
-    /* box-shadow: 0 0 32px 0 var(--shining-blue); */
+    border-radius: 15px;
+
 }
-.project-card .des{
+
+.des{
     width: 50%;
     margin-left: 30px;
     text-align: right;
 }
-.project-card .des-left{
+.des-left{
     width: 50%;
     margin-right: 30px;
     text-align: left;
 }
+
 .des h2{
     color: var(--text-color);
 }
@@ -63,9 +53,8 @@
     background: rgba(184, 125, 233, 0.3);
     backdrop-filter: blur(2.5em);
     border-radius: 15px;
-    padding: 25px;
+    padding: 20px;
     margin-left: -80px;
-
 }
 .des-left p{
     margin-left: 0px;
@@ -73,7 +62,6 @@
 }
 .des a,.des-left a{
     margin-top: 10px;
-
     text-decoration: none;
     color: var(--shining-blue);
 }
@@ -81,27 +69,63 @@
     text-decoration:underline;
 }
 .des span,.des-left span{
-    
-    /* background-image: linear-gradient(to right, var(--dark-blue) 0%, var(--shining-blue)  51%, #314755  100%); */
-    /* background-color: var(--text-color); */
-    border:none;
-    border-radius: 10px;
     color: var(--shining-blue);
-    /* background-color: ; */
     text-decoration: none;
     display: inline-block;
-    position: relative;
-    text-align: center;
     padding: 5px 15px 5px 15px;
     margin-top: 10px;
     font-size: 14px;
-    transition: 0.5s;
-    background-size: 200% auto;
-    /* box-shadow: 0 0 20px var(--shining-blue); */
+    font-weight: 800;
 }
-/* .des button:hover{
-    background-position: right center;
-} */
+@media (max-width: 992px) {
+            .project-card {
+                flex-direction: column;
+                position: relative;
+            }
+
+            .project-card img {
+                width: 100%;
+            }
+
+            .des,
+            .des-left {
+                border-radius: 15px;
+                color: var(--dark-blue);
+                position: absolute;
+                width: 100%;
+                margin: 0;
+                text-align: left;
+                /* background: rgba(184, 125, 233, 0.3); */
+                /* backdrop-filter: blur(0.5em); */
+                background: linear-gradient(to bottom, transparent, rgba(128, 0, 128, 0.5));
+                padding: 20px;
+                /* top: 20px; */
+                bottom: 0;
+
+            }
+            .project-card h2{
+                color: var(--shining-blue);
+            }
+            .des p,
+            .des-left p {
+                padding: 10px;
+                font-weight: 800;
+                font-size: 16px;
+                background: none;
+                backdrop-filter: blur(0em);
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        /* Responsive styles for screens up to 768px width */
+        @media (max-width: 768px) {
+            .projects {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            
+        }
     </style>
 </head>
 <body>
@@ -109,20 +133,29 @@
 
     <header>
         <a href="../index.html" id="logo">Logo</a>
-        <ul>
+        <ul id="pc-menu">
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="tools">
             <li><a href=""><ion-icon name="language-outline"></ion-icon></a></li>
-
+            <li><a href=""><ion-icon name="sunny-outline"></ion-icon></a></li>
+            <li id="mobile-menu" onclick="mobilemenu()"><a href="#" ><ion-icon name="grid-outline"></ion-icon></a></li>
         </ul>
     </header>
 
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <ul class="mobile-menu">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
     <section>
-        <h1>Projects</h1>
-
+    <h1>Projects</h1>
     <div class="projects">
-
             <div class="project-card">
                 <div class="des-left">
                     <h2>Portfolio</h2>
@@ -132,15 +165,17 @@
                     <span>CSS</span>
                     <span>JavaScript</span>
                 </div>
-                <img src="../img/c.png" alt="">
+
+                    <img  src="../img/c.png" alt="">
+                
             </div>
 
-            <div class="project-card">
+    <div class="project-card">
                 <img src="../img/c.png" alt="">
                 <div class="des">
                     <h2>Portfolio</h2>
                     <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, suscipit voluptatibus accusantium ab id nemo aliquam nesciunt iusto ratione quae iste quos quisquam incidunt consequuntur doloribus magni eos ipsam tempore?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, suscipit voluptatibus accusantium ab id nemo aliquam nesciunt iusto ratione quae iste quos quisq</p>
                     <span>HTML</span>
                     <span>CSS</span>
                     <span>JavaScript</span>
@@ -170,8 +205,30 @@
         </ul>
     </footer>
 
+
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+// mobile menu
+const mobileMenuButton = document.getElementById('mobile-menu');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+function mobilemenu() {
+    mobileMenuOverlay.classList.toggle('active');
+}
+
+mobileMenuOverlay.addEventListener('click', () => {
+    mobileMenuOverlay.classList.remove('active');
+});
+</script>
 </body>
 </body>
 </html>

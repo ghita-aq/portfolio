@@ -11,12 +11,7 @@
 
     <style>
 /* experinces */
-.container{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 30px;
-}
+
 .exp-des{
     position: relative;
     width: 100%;
@@ -65,14 +60,13 @@
     text-align: center;
 }
 .experiences .exp{
-    background-color: #2e4c72;
-    border-top: 2px solid var(--shining-blue);
-    position: relative;
+    /* background-image: linear-gradient(to right bottom, #3e3061 , #b87de9); */
+    background-image: radial-gradient(farthest-side at 500px 100px, #b87de9,#3e3061);
     padding: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: 0 7px 25px var(--dark-blue);
+    /* box-shadow: 0 7px 25px var(--dark-blue); */
     border-radius: 20px;
     margin-bottom: 10px;
 }
@@ -110,40 +104,45 @@
     /* color: var(--shining-blue); */
     text-decoration: none;
 }    
-.skills,
-.experiences{
-    display: none;
-}     
+   
 
     </style>
 </head>
 <body>
+    <div class="grid"></div>
     <header>
         <a href="../index.html" id="logo">Logo</a>
-        <ul>
+        <ul id="pc-menu">
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="tools">
             <li><a href=""><ion-icon name="language-outline"></ion-icon></a></li>
-
+            <li><a href=""><ion-icon name="sunny-outline"></ion-icon></a></li>
+            <li id="mobile-menu" onclick="mobilemenu()"><a href="#" ><ion-icon name="grid-outline"></ion-icon></a></li>
         </ul>
     </header>
 
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <ul class="mobile-menu">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
     
-    <section class="container">
-        <div class="exp-des">
+    <section >
             <h1>About Me</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, provident accusamus dicta alias saepe aliquid eaque quis quas dolor sit vitae nostrum ullam numquam similique tenetur modi ipsam perferendis voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore nisi quo quis ipsam laboriosam dolorem officia sint consectetur, iste adipisci nihil officiis tenetur sunt, obcaecati in excepturi ipsum aspernatur. Repellendus.</p>
-            <ul class="nav">
+            <!-- <ul class="nav">
                 <li class="selected"><span><ion-icon name="return-down-forward-outline"></ion-icon></span><button class="btn" onclick="showEducation(event)">Education</button></li>
                 <li><span><ion-icon name="return-down-forward-outline"></ion-icon></span><button onclick="showExperiences(event)">Experience</button></li>
                 <li><span><ion-icon name="return-down-forward-outline"></ion-icon></span><button onclick="showSkills(event)">Skills</button></li>
-            </ul>
-        </div>
-
-
-        <div class="result">
-        <div class="education">edu</div>
+            </ul> -->
+            <br>
+            <h1>Work Experience</h1>
         <div class="experiences">
             <div class="exp">
                 <div class="describes">
@@ -168,9 +167,10 @@
             </div>
             <p class="notice">Contact me for full experience details.</p>
         </div>
+        <br>
+        <h1>Skills</h1>
         
         <div class="skills">skils</div>
-    </div>
     </section>
 
   
@@ -187,77 +187,96 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <script>
-    // r=document.getElementsByClassName('result')[0]
-    function showEducation(event){
-        e=document.getElementsByClassName('experiences')[0]
-        e.style='display:none'
+    const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+// mobile menu
+const mobileMenuButton = document.getElementById('mobile-menu');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
-        edu=document.getElementsByClassName('education')[0]
-        edu.style='display:block'
-
-        s=document.getElementsByClassName('skills')[0]
-        s.style='display:none'
-
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            if (button !== event.target) {
-            button.parentElement.classList.remove('selected')
-            button.classList.remove('btn')
-
-            } else {
-            event.target.parentElement.classList.add('selected')
-            event.target.classList.add('btn')
-            }
-        })
+function mobilemenu() {
+    mobileMenuOverlay.classList.toggle('active');
 }
+
+mobileMenuOverlay.addEventListener('click', () => {
+    mobileMenuOverlay.classList.remove('active');
+});
+    // r=document.getElementsByClassName('result')[0]
+//     function showEducation(event){
+//         e=document.getElementsByClassName('experiences')[0]
+//         e.style='display:none'
+
+//         edu=document.getElementsByClassName('education')[0]
+//         edu.style='display:block'
+
+//         s=document.getElementsByClassName('skills')[0]
+//         s.style='display:none'
+
+//         const buttons = document.querySelectorAll('button');
+//         buttons.forEach(button => {
+//             if (button !== event.target) {
+//             button.parentElement.classList.remove('selected')
+//             button.classList.remove('btn')
+
+//             } else {
+//             event.target.parentElement.classList.add('selected')
+//             event.target.classList.add('btn')
+//             }
+//         })
+// }
     
-    function showExperiences(event){
-        e=document.getElementsByClassName('experiences')[0]
-        e.style='display:block'
+//     function showExperiences(event){
+//         e=document.getElementsByClassName('experiences')[0]
+//         e.style='display:block'
 
-        edu=document.getElementsByClassName('education')[0]
-        edu.style='display:none'
+//         edu=document.getElementsByClassName('education')[0]
+//         edu.style='display:none'
 
-        s=document.getElementsByClassName('skills')[0]
-        s.style='display:none'
+//         s=document.getElementsByClassName('skills')[0]
+//         s.style='display:none'
 
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            if (button !== event.target) {
-            button.parentElement.classList.remove('selected')
-            button.classList.remove('btn')
+//         const buttons = document.querySelectorAll('button');
+//         buttons.forEach(button => {
+//             if (button !== event.target) {
+//             button.parentElement.classList.remove('selected')
+//             button.classList.remove('btn')
 
-            } else {
-            event.target.parentElement.classList.add('selected')
-            event.target.classList.add('btn')
+//             } else {
+//             event.target.parentElement.classList.add('selected')
+//             event.target.classList.add('btn')
 
-            }
-        })
-    }
+//             }
+//         })
+//     }
     
-    function showSkills(event){
-        e=document.getElementsByClassName('experiences')[0]
-        e.style='display:none'
+//     function showSkills(event){
+//         e=document.getElementsByClassName('experiences')[0]
+//         e.style='display:none'
 
-        edu=document.getElementsByClassName('education')[0]
-        edu.style='display:none'
+//         edu=document.getElementsByClassName('education')[0]
+//         edu.style='display:none'
 
-        s=document.getElementsByClassName('skills')[0]
-        s.style='display:block'
+//         s=document.getElementsByClassName('skills')[0]
+//         s.style='display:block'
 
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            if (button !== event.target) {
-            button.parentElement.classList.remove('selected')
-            button.classList.remove('btn')
+//         const buttons = document.querySelectorAll('button');
+//         buttons.forEach(button => {
+//             if (button !== event.target) {
+//             button.parentElement.classList.remove('selected')
+//             button.classList.remove('btn')
 
-            } else {
-            event.target.parentElement.classList.add('selected')
-            event.target.classList.add('btn')
+//             } else {
+//             event.target.parentElement.classList.add('selected')
+//             event.target.classList.add('btn')
 
-            }
-        })
-    }
+//             }
+//         })
+//     }
 </script>
 </body>
 </html>
