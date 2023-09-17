@@ -70,7 +70,9 @@ header{
     /* background: linear-gradient(110deg, #130428 7%, #251043 34%, #38126D 57%, #261045 85%, #190634 100%); */
     background: rgba(184, 125, 233, 0.3);
     backdrop-filter: blur(2.5em);
+    /* background: linear-gradient(360deg, #361761 0%, #2D1949 20%, rgba(44, 18, 80, 0) 90%); */
     transition: all 0.15s cubic-bezier(0.4,0,0.2,1) 0s;
+
 }
 header #logo{
     text-decoration: none;
@@ -143,6 +145,14 @@ footer p a ion-icon{
     display: block;
 }
 /* responsive */
+@media (min-width: 1920px) {
+    section{
+    margin: 0 300px; 
+    }
+footer {
+    margin: 0px 300px 100px 300px;
+ }
+}
 @media (max-width: 992px) {
     section {
         margin: 50px 100px 

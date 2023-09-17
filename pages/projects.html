@@ -21,10 +21,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 20px;
     position: relative;
     border-radius: 20px;
-    padding: 60px 0 60px 0;  
+    margin: 60px 0px;  
 }
 
 .project-card img{
@@ -65,7 +64,7 @@
     text-decoration: none;
     color: var(--shining-blue);
 }
-.des a:hover{
+.des a:hover, .des-left a:hover{
     text-decoration:underline;
 }
 .des span,.des-left span{
@@ -77,30 +76,54 @@
     font-size: 14px;
     font-weight: 800;
 }
+
 @media (max-width: 992px) {
+    .projects{
+        padding-bottom: 60px;
+
+    }
             .project-card {
                 flex-direction: column;
                 position: relative;
+                /* margin: 100px 0px; */
+                /* border-radius: 15px; */
+                height: 90%;
             }
+            .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px; 
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)); */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(62, 48, 97, 0.9)); 
+            pointer-events: none;
+            } 
+        
 
             .project-card img {
+                
                 width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
             }
 
             .des,
             .des-left {
                 border-radius: 15px;
-                color: var(--dark-blue);
                 position: absolute;
                 width: 100%;
                 margin: 0;
                 text-align: left;
-                /* background: rgba(184, 125, 233, 0.3); */
-                /* backdrop-filter: blur(0.5em); */
-                background: linear-gradient(to bottom, transparent, rgba(128, 0, 128, 0.5));
+                /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)); */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(62, 48, 97, 0.9)); 
+
                 padding: 20px;
-                /* top: 20px; */
-                bottom: 0;
+                box-sizing: border-box;
+                bottom: 0px;
 
             }
             .project-card h2{
@@ -108,23 +131,61 @@
             }
             .des p,
             .des-left p {
-                padding: 10px;
-                font-weight: 800;
-                font-size: 16px;
+                padding: 0px 10px;
+                /* font-weight: 800; */
+                margin-top: 0px;
                 background: none;
                 backdrop-filter: blur(0em);
                 margin-left: 0;
                 margin-right: 0;
             }
+            
+            .des span,.des-left span{
+                
+                color: var(--shining-blue);
+                text-decoration: none;
+                display: inline-block;
+                padding: 0px 0px;
+                padding-right: 15px;
+                margin-top: 10px;
+                font-size: 14px;
+                font-weight: 800;
+            }
         }
 
         /* Responsive styles for screens up to 768px width */
         @media (max-width: 768px) {
+            h1{ 
+                margin-bottom: 10px;
+            }
             .projects {
-                grid-template-columns: repeat(1, 1fr);
+                padding-bottom: 30px;
+                font-size: 14px;
             }
 
+            .project-card {
+                flex-direction: column;
+                position: relative;
+                /* height: 100%; */
+                /* margin-bottom: 30px; */
+                
+            }
+            .des,
+            .des-left {
+                padding: 15px;
+            }
+            .project-card h2{
+                display: inline-block;
+            }
             
+            .des p,
+            .des-left p {
+                margin-top: 0px;
+                
+            }
+            .des a,.des-left a{
+            color: var(--text-color);
+        }
         }
     </style>
 </head>
@@ -165,9 +226,7 @@
                     <span>CSS</span>
                     <span>JavaScript</span>
                 </div>
-
                     <img  src="../img/c.png" alt="">
-                
             </div>
 
     <div class="project-card">
