@@ -8,7 +8,7 @@
     --dark-blue:#3e3061;
     --shining-blue:#f0249f;
     --light-purple:#b87de9;
-    --text-color:#e6e1db;
+    --text-color:white;
 }
 
 #foo {
@@ -47,10 +47,55 @@ section{
 }
 
 h1{
-    color: var(--shining-blue);
-    margin-bottom: 20px;
+    color: var(--text-color);
     font-size: 32px;
+    /* margin-bottom: ; */
 }
+/* tags */
+.tag {
+    color: var(--tag-color);
+    /* display: flex;
+    align-items: center;
+    margin: 5px 0; */
+}
+.tag span::before {
+    content: "";
+    display: inline-block;
+    height: 10px;
+    margin: 0px 5px;
+    width: var(--tag-width, 200px);
+    background: var(--tag-gradient, linear-gradient(90deg, transparent 50%, #48fdfd 50%)); /* Default gradient */
+}
+.h1-tag {
+    --tag-color: #48fdfd;
+    --tag-gradient: linear-gradient(90deg, #48fdfd, #9a48ac);
+}
+.h12-tag {
+    --tag-color: #859595;
+    --tag-gradient: linear-gradient(90deg, #859595, #ff1394);
+}
+.body-tag {
+    --tag-color: #fd8f0a;
+    --tag-gradient: linear-gradient(90deg, #fd8f0a, #ff1394);
+}
+
+.div-tag {
+    --tag-color: #40fd38;
+    --tag-gradient: linear-gradient(90deg, #40fd38, #dcff4c);
+}
+.div2-tag {
+    --tag-color: #c416ff;
+    --tag-gradient: linear-gradient(90deg, #c416ff, #3a80fd);
+}
+.h1-tag span:nth-child(2)::before,
+.body-tag span:nth-child(2)::before,
+.div-tag span:nth-child(2)::before,
+.div2-tag span:nth-child(2)::before,
+.h12-tag span:nth-child(2)::before  {
+    width: 50px; 
+}
+
+
 /* menu */
 header{
     padding: 32px 40px;
@@ -63,14 +108,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* margin: 30px 200px;
+    border: 2px solid var(--shining-blue);
+    border-radius: 10px;
+    width: calc(100% - 400px); */
 }
 .scrolled{
-    /* background: rgba(62, 48, 97, 0.8);
-    backdrop-filter: blur(1em); */
-    /* background: linear-gradient(110deg, #130428 7%, #251043 34%, #38126D 57%, #261045 85%, #190634 100%); */
     background: rgba(184, 125, 233, 0.3);
     backdrop-filter: blur(2.5em);
-    /* background: linear-gradient(360deg, #361761 0%, #2D1949 20%, rgba(44, 18, 80, 0) 90%); */
     transition: all 0.15s cubic-bezier(0.4,0,0.2,1) 0s;
 
 }
@@ -120,7 +165,7 @@ header ul li a:hover{
 }
 /* footer */
 footer{
-    margin: 0px 200px 100px 200px; 
+    margin: 20px 200px 100px 200px; 
     bottom: 0;
 }
 footer p a{

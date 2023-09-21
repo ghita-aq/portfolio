@@ -12,181 +12,65 @@
 
 .projects{
     position: relative;
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    margin: 30px 0px;
+    overflow-x: hidden; 
 }
-
-.project-card{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    border-radius: 20px;
-    margin: 60px 0px;  
-}
-
-.project-card img{
-    width: 50%;
-    border-radius: 15px;
-
-}
-
-.des{
-    width: 50%;
-    margin-left: 30px;
-    text-align: right;
-}
-.des-left{
-    width: 50%;
-    margin-right: 30px;
+.projects table{
+    border-collapse: separate; 
+    border-spacing: 0; 
     text-align: left;
-}
-
-.des h2{
-    color: var(--text-color);
-}
-.des p,.des-left p {
-    margin-top: 10px;
-    text-align: left;
-    background: rgba(184, 125, 233, 0.3);
-    backdrop-filter: blur(2.5em);
-    border-radius: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--shining-blue);
+    }
+.projects td {
+    border-top:  2px solid var(--shining-blue);
     padding: 20px;
-    margin-left: -80px;
+    word-spacing: 5px;
+    }
+.projects tr:first-child td{
+    border-top: none;
+        padding: 0px;
+        background: url("../img/c.png");
+        background-size: cover;
+        background-position: center; 
+        height: 200px;
+    }
+
+
+table h2{
+    color: var(--shining-blue);
 }
-.des-left p{
-    margin-left: 0px;
-    margin-right: -80px;
+table p {
+    margin: 10px 0px;
 }
-.des a,.des-left a{
-    margin-top: 10px;
+
+table a {
     text-decoration: none;
     color: var(--shining-blue);
 }
-.des a:hover, .des-left a:hover{
+table a:hover{
     text-decoration:underline;
 }
-.des span,.des-left span{
-    color: var(--shining-blue);
-    text-decoration: none;
-    display: inline-block;
-    padding: 5px 15px 5px 15px;
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 800;
-}
+
 
 @media (max-width: 992px) {
-    .projects{
-        padding-bottom: 60px;
+    .projects{ 
+    grid-template-columns: repeat(1,1fr);
 
+    } 
+    .projects tr:first-child td{
+        height: 400px;
     }
-            .project-card {
-                flex-direction: column;
-                position: relative;
-                /* margin: 100px 0px; */
-                /* border-radius: 15px; */
-                height: 90%;
-            }
-            .project-card::before {
-            content: "";
-            position: absolute;
-            top: 0px;
-            left: 0px; 
-            border-radius: 15px;
-            width: 100%;
-            height: 100%;
-            /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)); */
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(62, 48, 97, 0.9)); 
-            pointer-events: none;
-            } 
-        
-
-            .project-card img {
-                
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: 50% 50%;
-            }
-
-            .des,
-            .des-left {
-                border-radius: 15px;
-                position: absolute;
-                width: 100%;
-                margin: 0;
-                text-align: left;
-                /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)); */
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(62, 48, 97, 0.9)); 
-
-                padding: 20px;
-                box-sizing: border-box;
-                bottom: 0px;
-
-            }
-            .project-card h2{
-                color: var(--shining-blue);
-            }
-            .des p,
-            .des-left p {
-                padding: 0px 10px;
-                /* font-weight: 800; */
-                margin-top: 0px;
-                background: none;
-                backdrop-filter: blur(0em);
-                margin-left: 0;
-                margin-right: 0;
-            }
-            
-            .des span,.des-left span{
-                
-                color: var(--shining-blue);
-                text-decoration: none;
-                display: inline-block;
-                padding: 0px 0px;
-                padding-right: 15px;
-                margin-top: 10px;
-                font-size: 14px;
-                font-weight: 800;
-            }
-        }
-
-        /* Responsive styles for screens up to 768px width */
-        @media (max-width: 768px) {
-            h1{ 
-                margin-bottom: 10px;
-            }
-            .projects {
-                padding-bottom: 30px;
-                font-size: 14px;
-            }
-
-            .project-card {
-                flex-direction: column;
-                position: relative;
-                /* height: 100%; */
-                /* margin-bottom: 30px; */
-                
-            }
-            .des,
-            .des-left {
-                padding: 15px;
-            }
-            .project-card h2{
-                display: inline-block;
-            }
-            
-            .des p,
-            .des-left p {
-                margin-top: 0px;
-                
-            }
-            .des a,.des-left a{
-            color: var(--text-color);
-        }
-        }
+}
+@media (max-width: 768px) {
+    .projects tr:first-child td{
+        height: 300px;
+    }
+}
     </style>
 </head>
 <body>
@@ -215,43 +99,35 @@
     </div>
 
     <section>
-    <h1>Projects</h1>
+    <h1><span style="color: #f0249f;">#</span> Projects</h1>
     <div class="projects">
-            <div class="project-card">
-                <div class="des-left">
-                    <h2>Portfolio</h2>
-                    <!-- <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, suscipit voluptatibus accusantium ab id nemo aliquam nesciunt iusto ratione quae iste quos quisquam incidunt consequuntur doloribus magni eos ipsam tempore?</p>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                </div>
-                    <img  src="../img/c.png" alt="">
-            </div>
-
-    <div class="project-card">
-                <img src="../img/c.png" alt="">
-                <div class="des">
-                    <h2>Portfolio</h2>
-                    <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, suscipit voluptatibus accusantium ab id nemo aliquam nesciunt iusto ratione quae iste quos quisq</p>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                </div>     
-            </div>
-
-            <div class="project-card">
-                <div class="des-left">
-                    <h2>Portfolio</h2>
-                    <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, suscipit voluptatibus accusantium ab id nemo aliquam nesciunt iusto ratione quae iste quos quisquam incidunt consequuntur doloribus magni eos ipsam tempore?</p>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                </div>
-                <img src="../img/c.png" alt="">
-            </div>
+        <table>
+            <tr><td></td></tr>
+            <tr><td>HTML CSS JavaScript</td></tr>
+            <tr><td>
+                <h2>Portfolio</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat deleniti modi itaque necessitatibus laborum suscipit quaerat recusandae autem unde aliquid odio, optio ab ex sed at quo porro neque nihil.</p>
+                <!-- <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a> -->
+            </td></tr>
+        </table>
+        <table>
+            <tr><td><</td></tr>
+            <tr><td>HTML CSS JavaScript</td></tr>
+            <tr><td>
+                <h2>Portfolio</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat deleniti modi itaque necessitatibus laborum suscipit quaerat recusandae autem unde aliquid odio, optio ab ex sed at quo porro neque nihil.</p>
+                <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+            </td></tr>
+        </table>
+        <table>
+            <tr><td></td></tr>
+            <tr><td>HTML CSS JavaScript</td></tr>
+            <tr><td>
+                <h2>Portfolio</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat deleniti modi itaque necessitatibus laborum suscipit quaerat recusandae autem unde aliquid odio, optio ab ex sed at quo porro neque nihil.</p>
+                <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+            </td></tr>
+        </table>
     </div>
     </section>
 

@@ -10,11 +10,11 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
 
     <style>
-        section{
+        /* section{
             margin: 50px 200px;  
-        }
+        } */
         form{   
-            margin: 50px 0px;
+            margin: 30px 0px;
         }
         form div{
             display: flex;
@@ -23,10 +23,10 @@
         form input,form textarea{
             background-color: transparent;
             margin-bottom:30px;
-            border: 1px solid var(--shining-blue);
+            border: 2px solid var(--shining-blue);
             padding: 24px 21px;
             color: var(--text-color);
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 16px;
         }
         ::placeholder{
@@ -39,19 +39,20 @@
         form textarea:hover
         {
             background-color:#0b0911;
-            border: 1px dashed var(--light-purple);
+            border: 2px dashed var(--light-purple);
             color: var(--text-color);
         }
         form button{
             text-align: center;
             display:block;
             padding: 15px 40px;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 16px;
             background-color: var(--text-color);
             color: var(--dark-blue);
             font-weight:bolder;
             cursor: pointer;
+            border: none;
         }  
         @media (min-width: 1920px) {
     section{
@@ -63,12 +64,12 @@ footer {
 }
         @media (max-width: 992px) {
         section {
-            margin: 50px 100px 
+            margin: 30px 100px 
         }
 } 
         @media (max-width: 768px) {
             section {
-                margin: 50px 50px
+                margin: 30px 50px
             }
         }
 
@@ -100,8 +101,8 @@ footer {
     </div>
 
     <section>
-        <h1>Contact</h1>
-        <p>Get in touch or shoot me an email directly on <b>aqasbi.ghita@gmail.com</b></p>
+        <h1><span style="color: #f0249f;">#</span> Contact</h1>
+        <p style="margin-top: 20px;">Get in touch or shoot me an email directly on <b>aqasbi.ghita@gmail.com</b></p>
         <form action="mailto:aqasbi.ghita@gmail.com">
             <div>
             <input type="text" name="name" id="" placeholder="Name" required>

@@ -16,7 +16,7 @@
     <ul id="pc-menu">
         <li><a href="pages/about.html">About</a></li>
         <li><a href="pages/projects.html">Projects</a></li>
-        <li><a href="pages/contact2.html">Contact</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
     </ul>
     <ul class="tools">
         <li><a href=""><ion-icon name="language-outline"></ion-icon></a></li>
@@ -55,14 +55,14 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script>
-//     const header = document.querySelector('header');
-// window.addEventListener('scroll', () => {
-//     if (window.scrollY > 0) {
-//         header.classList.add('scrolled');
-//     } else {
-//         header.classList.remove('scrolled');
-//     }
-// });
+    const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
 // mobile menu
 const mobileMenuButton = document.getElementById('mobile-menu');
 const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
