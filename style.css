@@ -108,13 +108,15 @@ header ul li a:hover{
     color: white;
     background: var(--shining-blue);
 }
-.tools li a{
+#mobile-menu{
     background-color: var(--shining-blue);
     transition: all 0.15s ease-in-out 0s;
     font-weight: 800;
+    border-radius: 6px;
+    text-align: center;
     padding: 8px 8px 6px 8px;
 }
-.tools li a:hover{
+#mobile-menu:hover{
     background-color: #b30c71;
 
 }
