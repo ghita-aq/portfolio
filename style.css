@@ -252,9 +252,9 @@ footer {
         display: none;
     }
     section {
-        margin: 50px 50px;
+        margin: 50px 30px;
     }
     footer {
-        margin: 0px 50px 50px 50px; 
+        margin: 0px 30px 50px 30px; 
     }
 }

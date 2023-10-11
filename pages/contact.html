@@ -46,27 +46,35 @@
         }
         form button{
             text-align: center;
-            display:block;
-            padding: 15px 40px;
-            border-radius: 10px;
-            font-size: 16px;
+            /* display:block; */
+            /* padding: 15px 40px; */
+            /* border-radius: 10px; */
+            /* font-size: 16px; */
             background-color: var(--text-color);
             color: var(--dark-blue);
-            /* background-color: transparent; */
             font-weight:bolder;
             cursor: pointer;
             border: none;
-            margin: 0 auto;
+
+            border-radius: 5px;
+            padding: 10px;
+            display: inline-block;
+            font-size: 14px;
+            /* margin: 0 auto; */
         }  
-        
+        #form button ion-icon{
+            font-size: larger;
+            margin-bottom: -5px;
+        }
+
         @media (min-width: 1920px) {
-    section{
-    margin: 0 300px; 
-    }
-footer {
-    margin: 0px 300px 100px 300px;
- }
-}
+            section{
+            margin: 0 300px; 
+            }
+        footer {
+            margin: 0px 300px 100px 300px;
+        }
+        }
         @media (max-width: 992px) {
         section {
             margin: 30px 100px 
@@ -74,7 +82,7 @@ footer {
 } 
         @media (max-width: 768px) {
             section {
-                margin: 30px 50px
+                margin: 30px 30px
             }
         }
 
@@ -112,7 +120,7 @@ footer {
             <input type="email" name="email" id="" placeholder="Email" required>
             <textarea name="message" id="" cols="30" rows="10" placeholder="Message" required></textarea>
             </div>
-            <button type="submit">Send Message</button>
+            <button type="submit">SEND MESSAGE <ion-icon name="mail-open-outline"></ion-icon></button>
         </form>
     </section>
 
