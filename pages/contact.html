@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
 
     <style>
         /* section{
@@ -39,8 +40,9 @@
         form textarea:hover
         {
             background-color:#0b0911;
-            border: 2px dashed var(--light-purple);
             color: var(--text-color);
+            border: 2px dashed var(--light-purple);
+            
         }
         form button{
             text-align: center;
@@ -50,10 +52,13 @@
             font-size: 16px;
             background-color: var(--text-color);
             color: var(--dark-blue);
+            /* background-color: transparent; */
             font-weight:bolder;
             cursor: pointer;
             border: none;
+            margin: 0 auto;
         }  
+        
         @media (min-width: 1920px) {
     section{
     margin: 0 300px; 
@@ -79,11 +84,11 @@ footer {
     <div class="grid"></div>
  
     <header>
-        <a href="../index.html" id="logo">Logo</a>
+        <a href="../index.html" id="logo"><img src="../img/logo-bg.png" width="70px"></a>
         <ul id="pc-menu">
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
         <ul class="tools">
             <li><a href=""><ion-icon name="language-outline"></ion-icon></a></li>
@@ -94,15 +99,16 @@ footer {
 
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <ul class="mobile-menu">
+            <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </div>
 
     <section>
-        <h1><span style="color: #f0249f;">#</span> Contact</h1>
-        <p style="margin-top: 20px;">Get in touch or shoot me an email directly on <b>aqasbi.ghita@gmail.com</b></p>
+        <h1>Contact</h1>
+            <p style="margin-top: 20px;word-spacing: 5px; ">Get in touch or shoot me an email directly on <b>aqasbi.ghita@gmail.com</b></p>
         <form action="mailto:aqasbi.ghita@gmail.com">
             <div>
             <input type="text" name="name" id="" placeholder="Name" required>
@@ -115,11 +121,11 @@ footer {
 
 
     <footer>
-            <p><a href="../index.html">Go Back Home<ion-icon name="arrow-forward-outline"></ion-icon></a></p>
+            <p><a href="../index.html" id="call-to-action">GO BACK HOME <ion-icon name="caret-forward-circle-outline"></ion-icon></ion-icon></a></p>
             <ul id="contact-links">
-                <li><a href="https://www.linkedin.com/in/aqasbighita/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-                <li><a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon></a></li>
-                <li><a href="mailto:aqasbi.ghita@gmail.com"><ion-icon name="logo-google"></ion-icon></a></li>
+                <li><a href="https://www.linkedin.com/in/aqasbighita/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                <li><a href="https://github.com/ghita-aq" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+                <li><a href="mailto:aqasbi.ghita@gmail.com" target="_blank"><ion-icon name="logo-google"></ion-icon></a></li>
             </ul>
     </footer>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -141,9 +147,12 @@ const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
 function mobilemenu() {
     mobileMenuOverlay.classList.toggle('active');
+    header.classList.add('scrolled');
+
 }
 
 mobileMenuOverlay.addEventListener('click', () => {
+    header.classList.remove('scrolled');
     mobileMenuOverlay.classList.remove('active');
 });
 </script>

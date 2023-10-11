@@ -8,7 +8,7 @@
     --dark-blue:#3e3061;
     --shining-blue:#f0249f;
     --light-purple:#b87de9;
-    --text-color:white;
+    --text-color:#e3d5d4;
 }
 
 #foo {
@@ -18,12 +18,12 @@
 }
 
   body {
-    margin-top:130px;
+    margin-top:120px;
     background-color: #11071f;
     font-size: 16px;
     width: 100%;
     color: #fff;
-   height: 100vh;
+   height: (100vh - 120px);
   } 
 
 .grid{
@@ -32,7 +32,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Place it behind the content */
+    z-index: -1;
     background-image: 
     linear-gradient(var(--text-color) 0.01em, transparent 0.1em), 
     linear-gradient(90deg, var(--text-color) 0.01em, transparent 0.1em);
@@ -49,52 +49,7 @@ section{
 h1{
     color: var(--text-color);
     font-size: 32px;
-    /* margin-bottom: ; */
 }
-/* tags */
-.tag {
-    color: var(--tag-color);
-    /* display: flex;
-    align-items: center;
-    margin: 5px 0; */
-}
-.tag span::before {
-    content: "";
-    display: inline-block;
-    height: 10px;
-    margin: 0px 5px;
-    width: var(--tag-width, 200px);
-    background: var(--tag-gradient, linear-gradient(90deg, transparent 50%, #48fdfd 50%)); /* Default gradient */
-}
-.h1-tag {
-    --tag-color: #48fdfd;
-    --tag-gradient: linear-gradient(90deg, #48fdfd, #9a48ac);
-}
-.h12-tag {
-    --tag-color: #859595;
-    --tag-gradient: linear-gradient(90deg, #859595, #ff1394);
-}
-.body-tag {
-    --tag-color: #fd8f0a;
-    --tag-gradient: linear-gradient(90deg, #fd8f0a, #ff1394);
-}
-
-.div-tag {
-    --tag-color: #40fd38;
-    --tag-gradient: linear-gradient(90deg, #40fd38, #dcff4c);
-}
-.div2-tag {
-    --tag-color: #c416ff;
-    --tag-gradient: linear-gradient(90deg, #c416ff, #3a80fd);
-}
-.h1-tag span:nth-child(2)::before,
-.body-tag span:nth-child(2)::before,
-.div-tag span:nth-child(2)::before,
-.div2-tag span:nth-child(2)::before,
-.h12-tag span:nth-child(2)::before  {
-    width: 50px; 
-}
-
 
 /* menu */
 header{
@@ -114,7 +69,7 @@ header{
     width: calc(100% - 400px); */
 }
 .scrolled{
-    background: rgba(184, 125, 233, 0.3);
+    background: #7e6688;
     backdrop-filter: blur(2.5em);
     transition: all 0.15s cubic-bezier(0.4,0,0.2,1) 0s;
 
@@ -149,7 +104,10 @@ header ul li a:hover{
     background: var(--shining-blue);
     transition: all 0.15s cubic-bezier(0.4,0,0.2,1) 0s;
 }
-
+.active{
+    color: white;
+    background: var(--shining-blue);
+}
 .tools li a{
     background-color: var(--shining-blue);
     transition: all 0.15s ease-in-out 0s;
@@ -168,16 +126,40 @@ footer{
     margin: 20px 200px 100px 200px; 
     bottom: 0;
 }
-footer p a{
+#call-to-action{
     text-decoration: none;
     color: var(--text-color);
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    font-size: 14px;
+    background-color: #7e6688;
+    text-align: center;
+    /* margin: 10px 0px; */
 }
-footer p a:hover{
+/* footer p a:hover{
     text-decoration: underline;
-}
-footer p a ion-icon{
+} */
+/* footer p a ion-icon{
     margin-left: 15px;
     font-size: 15px;
+} */
+#call-to-action ion-icon{
+    font-size: larger;
+    margin-bottom: -3px;
+    animation: moveLeftRight 0.5s linear infinite alternate;
+}
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+#call-to-action:hover ion-icon {
+    animation-play-state: paused;
+    transform: translateX(0);
 }
 #contact-links li{
     margin-top: 30px;
@@ -221,6 +203,7 @@ footer {
     z-index: 999;
     background: var(--shining-blue);
     background: hsl(0 0% 100% / 0.1);
+    /* background-color:#0b0911; */
     backdrop-filter: blur(1rem);
 }
 
@@ -245,12 +228,18 @@ footer {
     text-decoration: none;
     font-size: 18px;
     color: var(--text-color);
+
     display: block;
     border-radius: 6px;
     padding: 8px 16px;
     font-size: 20px;
 }
+.mobile-menu .active{
+    color: white;
+}
 .mobile-menu a:hover{
+    color: white;
+    font-weight: normal;
     background: var(--shining-blue);
     transition: all 0.15s cubic-bezier(0.4,0,0.2,1) 0s;
 }
@@ -261,9 +250,9 @@ footer {
         display: none;
     }
     section {
-        margin: 50px 50px
+        margin: 50px 50px;
     }
     footer {
-        margin: 0px 50px 100px 50px; 
+        margin: 0px 50px 50px 50px; 
     }
 }

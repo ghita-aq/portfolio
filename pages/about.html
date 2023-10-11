@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
 
     <style>
 
@@ -20,12 +21,12 @@
         
     }
 .describes {
-    /* border: 2px solid var(--shining-blue); */
+    border: 2px solid var(--shining-blue);
     padding: 20px;
     border-radius: 10px;
-    background-color:#0b0911;
-    border: 2px dashed var(--light-purple);
+    
 }
+
 .describes h3{
     color: var(--shining-blue);
     font-weight: 800;
@@ -35,22 +36,13 @@
     margin-top: 10px;
 }
 
-li.describes::before {
-    content: ""; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 20px; 
-    color: var(--shining-blue);
-}
 
 .describes span{
-    color: var(--text-color);
-    font-weight:lighter;
+    color: var(--shining-blue);
+    font-weight:bolder;
+    font-size: 25px;
 }
-/* .describes p{
-    margin-top: 10px;
-} */
+
 .describes .notice{
     color: rgba(211, 211, 211, 0.733);
 }
@@ -78,6 +70,7 @@ li.describes::before {
         border-bottom: 2px solid var(--shining-blue);
     }
     .skills th{
+        color: var(--shining-blue);
         height: 40px;
     }
     @media (max-width: 768px) {
@@ -91,9 +84,9 @@ li.describes::before {
 <body>
     <div class="grid"></div>
     <header>
-        <a href="../index.html" id="logo">Logo</a>
+        <a href="../index.html" id="logo"><img src="../img/logo-bg.png" width="70px"></a>
         <ul id="pc-menu">
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html" class="active">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -106,7 +99,8 @@ li.describes::before {
 
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <ul class="mobile-menu">
-            <li><a href="about.html">About</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -114,27 +108,23 @@ li.describes::before {
 
     
     <section>
-        <!-- <div class="body-tag tag">&lt;body&gt; <span></span><span></span></div>
-        <div class="h1-tag tag">&lt;h1&gt; <span></span><span></span></div> -->
-            <h1><span style="color: #f0249f;">#</span> Education <span style="color: #f0249f;">/</span> Experience</h1><br>
-        <!-- <div class="div2-tag tag">&lt;/h1&gt; <span></span><span></span></div>
-        <div class="div-tag tag">&lt;div&gt; <span></span><span></span></div>
-       <br> -->
+       
+            <h1>Education</h1>
             <div class="exp">
                 <div class="describes">
-                    <h3>Web Developper <span class="notice">(Internship)</span> · Devpub Solution</h3>
-                    <p>a pagraphe that describes what i've done khdsfkhdklhhfdgl kjhrkljekl iojterjt pojpoity oyipotiy </p>
-                </div>
-                <div class="describes">
-                    <h3>Diploma · OFPPT</h3>
-                    <p>a pagraphe that describes what i've done khdsfkhdklhhfdgl kjhrkljekl iojterjt pojpoity oyipotiy </p>
+                    <h3>Diploma in Full Stack Web Development - OFPPT</h3>
+                    <p>In 2023, I successfully completed this program that equipped me with the essential skills in both front-end and back-end development.</p>
                 </div> 
             </div>
-        <!-- <div class="div2-tag tag">&lt;/div&gt; <span></span><span></span></div>
-        <div class="body-tag tag">&lt;h1&gt; <span></span><span></span></div> -->
-        <h1><span style="color: #f0249f;">#</span> Skills</h1>
-        <!-- <div class="h1-tag tag">&lt;/h1&gt; <span></span><span></span></div>
-        <div class="div-tag tag">&lt;div&gt; <span></span><span></span></div> -->
+            <h1>Experience</h1>
+            <div class="exp">
+                <div class="describes">
+                    <h3>Web Developper - DEVPUB SOLUTION</h3>
+                    <p>In 2023, I took an internship as a web developer at DEVPUB SOLUTION, where I significantly enhanced my skills and knowledge in web development.</p>
+                </div>
+            </div>
+        <h1>Skills</h1>
+ 
         <div class="skills">
         <table>
             <tr><th>Front-End</th></tr>
@@ -143,7 +133,7 @@ li.describes::before {
 
         <table>
             <tr><th>Back-End</th></tr>
-            <tr><td>Node PHP Laravel Python MySQL MongoDB</td></tr>
+            <tr><td>Node PHP Laravel Python C MySQL MongoDB</td></tr>
         </table>
 
         <table>
@@ -151,59 +141,30 @@ li.describes::before {
             <tr><td>Git UML WordPress Figma Canva</td></tr>
         </table>
         </div>
-        <!-- <div class="div2-tag tag">&lt;/div&gt; <span></span><span></span></div>
-        <div class="body-tag tag">&lt;/body&gt; <span></span><span></span></div> -->
+
     </section>
 
     <footer>
-        <p><a href="projects.html">Continue To Projects<ion-icon name="arrow-forward-outline"></ion-icon></a></p>
+        <p><a href="projects.html" id="call-to-action">CONTINUE TO PROJECTS <ion-icon name="caret-forward-circle-outline"></ion-icon></a></p>
         <ul id="contact-links">
-            <li><a href="https://www.linkedin.com/in/aqasbighita/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li><a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon></a></li>
-            <li><a href="mailto:aqasbi.ghita@gmail.com"><ion-icon name="logo-google"></ion-icon></a></li>
+            <li><a href="https://www.linkedin.com/in/aqasbighita/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://github.com/ghita-aq" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="mailto:aqasbi.ghita@gmail.com" target="_blank"><ion-icon name="logo-google"></ion-icon></a></li>
         </ul>
     </footer>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <script>
-   var circ = document.querySelectorAll('.circ');
-    var circContainer = document.querySelector('.circ-container');
-
-    function newPosition(element) {
-        var parentWidth = circContainer.clientWidth - 50;
-        var parentHeight = circContainer.clientHeight - 50;
-        var left = Math.floor(Math.random() * parentWidth);
-        var top = Math.floor(Math.random() * parentHeight);
-
-        element.style.left = left + 'px';
-        element.style.top = top + 'px';
-    }
-
-    circContainer.style.position = 'relative';
-
-    circ.forEach(function (element) {
-        element.style.position = 'absolute';
-        newPosition(element);
-    });
-
-    // Trigger a reposition every 2 seconds
-    setInterval(function () {
-        circ.forEach(function (element) {
-            newPosition(element);
-        });
-    }, 2000);
-
     // scroll header
     const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
 // mobile menu
 const mobileMenuButton = document.getElementById('mobile-menu');
@@ -211,21 +172,15 @@ const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
 function mobilemenu() {
     mobileMenuOverlay.classList.toggle('active');
+    header.classList.add('scrolled');
+
 }
 
 mobileMenuOverlay.addEventListener('click', () => {
+    header.classList.remove('scrolled');
     mobileMenuOverlay.classList.remove('active');
 });
-// tags 
-function getRandomWidth() {
-            return Math.floor(Math.random() * 100) + 50 + 'px'; // Adjust the range as needed
-        }
 
-        // Apply random widths to spans
-        const spans = document.querySelectorAll('.tag span:nth-child(2)::before');
-        spans.forEach(span => {
-            span.style.setProperty('--tag-width', getRandomWidth());
-        });
 </script>
 </body>
 </html>

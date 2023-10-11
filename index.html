@@ -3,16 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghita Aqasbi Portfolio</title>
+    <title>Home | Ghita Aqasbi | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <style>
+        #herosection{
+            /* height: (100vh - 120px); */
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .info{
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+        }
+        #computer {
+            width: 50%;
+            animation: flyingAnimation 3s infinite;
+        }
+
+        @keyframes flyingAnimation {
+        0%,100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-30px);
+        }
+        }
+        .info p,.info h1{
+            margin-bottom: 20px;
+            color: var(--text-color);
+
+        }
+        .info p{
+            word-spacing: 5px;
+        }
+
+        #job {
+            position: relative;
+            -webkit-text-stroke: 0.001vw #7e6688;
+            color: transparent;
+
+}
+#job::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-right: 2px solid var(--shining-blue);
+    color: var(--shining-blue);
+    -webkit-text-stroke: 0vw var(--text-color);
+    overflow: hidden;
+    animation: creativeAnimation 5s linear infinite ;
+}
+@keyframes creativeAnimation {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%,90% {
+        width: 100%;
+    }
+}
+        #call-to-action{
+            margin: 10px 0px;
+        }
+        #contact-links li{
+            padding: 2px;
+            margin-top: 0px;
+        }
+       
+        @media (max-width: 1071px) {
+            #herosection{  
+                height: 100%;
+                flex-direction: column;
+                padding-top: 80px;
+                align-items: center;
+            }
+            #computer{
+                width: 70%;
+                order: -1;
+            }
+            .titles{
+               position: absolute;
+               top: 110px;
+               left: 60%;
+               width: 85%;
+               transform: translate(-60%, 0%);
+               display: flex;
+               justify-content: space-around; 
+              
+            }
+        }
+
+        @media (max-width: 768px) {
+            #herosection{  
+                padding-top: 130px;
+            }
+            #computer{
+                width: 100%;
+            }
+            .titles{
+               bottom: 50px;
+               left: 50%;
+               width: 70%;
+               transform: translate(-50%, 0%);
+               display: block;
+            }
+        }
+    </style>
 </head>
 <body> 
   <div class="grid"></div>
   <header>
-    <a href="index.html" id="logo">Logo</a>
+    <a href="../index.html" id="logo"><img src="img/logo-bg.png" width="70px"></a>
     <ul id="pc-menu">
         <li><a href="pages/about.html">About</a></li>
         <li><a href="pages/projects.html">Projects</a></li>
@@ -27,28 +138,38 @@
 
 <div class="mobile-menu-overlay" id="mobileMenuOverlay">
     <ul class="mobile-menu">
+        <li><a href="../index.html" class="active">Home</a></li>
         <li><a href="pages/about.html">About</a></li>
         <li><a href="pages/projects.html">Projects</a></li>
-        <li><a href="pages/contact2.html">Contact</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
     </ul>
 </div>
 
     <section id="herosection">
-        <h1>Hello, I'm Ghita Aqasbi</h1>
-        <p>A Full Stack Web Developer
-        Recent graduate excited to start my carrer on the professional word. Open to new job opportunities and project collaborations!</p>
-        <br>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error ipsam assumenda veniam? Totam perspiciatis, reiciendis id nam in facilis harum dignissimos necessitatibus placeat voluptas ratione eum vero, porro, et quia.</p>
+        <div class="info">
+            <div class="titles">
+            <h1>Hello, I'm <b>GHITA AQASBI</b></h1>
+            <h1 >A <span id="job" data-text="Full Stack Web Developer">Full Stack Web Developer</span></h1>
+            </div>
+            <p>Recent graduate excited to start my carrer on the professional world. Open to new job opportunities and project collaborations !</p>
+            <p><a href="pages/about.html" id="call-to-action">LEARN MORE <ion-icon name="caret-forward-circle-outline"></ion-icon></a></p>
+            <ul id="contact-links">
+                <li><a href="https://www.linkedin.com/in/aqasbighita/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                <li><a href="https://github.com/ghita-aq" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+                <li><a href="mailto:aqasbi.ghita@gmail.com" target="_blank"><ion-icon name="logo-google"></ion-icon></a></li>
+            </ul>
+        </div> 
+        <img id="computer" src="img/computer2.png">
       </section>
-
-<footer>
-        <p><a href="pages/about.html">Learn More About Me<ion-icon name="arrow-forward-outline"></ion-icon></a></p>
+      
+<!-- <footer>
+        <p><a href="pages/about.html">Learn More <ion-icon name="arrow-forward-outline"></ion-icon></a></p>
         <ul id="contact-links">
-            <li><a href="https://www.linkedin.com/in/aqasbighita/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li><a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon></a></li>
-            <li><a href="mailto:aqasbi.ghita@gmail.com"><ion-icon name="logo-google"></ion-icon></a></li>
+            <li><a href="https://www.linkedin.com/in/aqasbighita/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://github.com/ghita-aq" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="mailto:aqasbi.ghita@gmail.com" target="_blank"><ion-icon name="logo-google"></ion-icon></a></li>
         </ul>
-</footer>
+</footer> -->
 
 
 
@@ -69,9 +190,12 @@ const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
 function mobilemenu() {
     mobileMenuOverlay.classList.toggle('active');
+    header.classList.add('scrolled');
+
 }
 
 mobileMenuOverlay.addEventListener('click', () => {
+    header.classList.remove('scrolled');
     mobileMenuOverlay.classList.remove('active');
 });
 </script>

@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+
     <style>
 
 .projects{
@@ -34,7 +36,7 @@
 .projects tr:first-child td{
     border-top: none;
         padding: 0px;
-        background: url("../img/c.png");
+        /* background: url("../img/c.png"); */
         background-size: cover;
         background-position: center; 
         height: 200px;
@@ -77,10 +79,10 @@ table a:hover{
   <div class="grid"></div>
 
     <header>
-        <a href="../index.html" id="logo">Logo</a>
+        <a href="../index.html" id="logo"><img src="../img/logo-bg.png" width="70px"></a>
         <ul id="pc-menu">
             <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <ul class="tools">
@@ -92,51 +94,52 @@ table a:hover{
 
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <ul class="mobile-menu">
+            <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
 
     <section>
-    <h1><span style="color: #f0249f;">#</span> Projects</h1>
+    <h1>Projects</h1>
     <div class="projects">
         <table>
-            <tr><td></td></tr>
+            <tr><td style='background: url("../img/portfolio.png");background-size: cover;background-position: center;'></td></tr>
             <tr><td>HTML CSS JavaScript</td></tr>
             <tr><td>
                 <h2>Portfolio</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat deleniti modi itaque necessitatibus laborum suscipit quaerat recusandae autem unde aliquid odio, optio ab ex sed at quo porro neque nihil.</p>
+                <p>Static personnal portfolio built using HTML and CSS and Javascript. Optimized for all mobile and desktop devices.</p>
                 <!-- <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a> -->
             </td></tr>
         </table>
         <table>
-            <tr><td><</td></tr>
-            <tr><td>HTML CSS JavaScript</td></tr>
+            <tr><td style='background: url("../img/timer.png");background-size: cover;background-position: center;'></td></tr>
+            <tr><td>HTML CSS Bootstrap JavaScript jQuery Ajax Laravel MySQL</td></tr>
             <tr><td>
-                <h2>Portfolio</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat deleniti modi itaque necessitatibus laborum suscipit quaerat recusandae autem unde aliquid odio, optio ab ex sed at quo porro neque nihil.</p>
-                <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+                <h2>Study Timer Website</h2>
+                <p>Study timer app helps users track their study progress, customize timers, manage profiles, view productivity stats, collaborate in groups, and compete in rankings. It offers task management, live study rooms, and motivational quotes for a more focused and efficient study experience.</p>
+                <a href="https://github.com/ghita-aq/studytimer" target="_blank"><ion-icon name="logo-github"></ion-icon> GitHub</a>
             </td></tr>
         </table>
         <table>
-            <tr><td></td></tr>
-            <tr><td>HTML CSS JavaScript</td></tr>
+        <tr><td style='background: url("../img/hospitalManagement.png");background-size: cover;background-position: top center;'></td></tr>
+            <tr><td>HTML CSS Bootstrap JavaScript PHP MySQL</td></tr>
             <tr><td>
-                <h2>Portfolio</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat deleniti modi itaque necessitatibus laborum suscipit quaerat recusandae autem unde aliquid odio, optio ab ex sed at quo porro neque nihil.</p>
-                <a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+                <h2>Hospital Management System</h2>
+                <p>An hospital management app streamlines patient admissions, consultations, discharges, and room reservations for efficient healthcare operations.</p>
+                <a href="https://github.com/ghita-aq/HospitalManagement" target="_blank"><ion-icon name="logo-github"></ion-icon> GitHub</a>
             </td></tr>
         </table>
     </div>
     </section>
 
     <footer>
-        <p><a href="contact.html">Cantact Me<ion-icon name="arrow-forward-outline"></ion-icon></a></p>
+        <p><a href="contact.html" id="call-to-action">CONTACT ME <ion-icon name="caret-forward-circle-outline"></ion-icon></a></p>
         <ul id="contact-links">
-            <li><a href="https://www.linkedin.com/in/aqasbighita/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li><a href="https://github.com/ghita-aq"><ion-icon name="logo-github"></ion-icon></a></li>
-            <li><a href="mailto:aqasbi.ghita@gmail.com"><ion-icon name="logo-google"></ion-icon></a></li>
+            <li><a href="https://www.linkedin.com/in/aqasbighita/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://github.com/ghita-aq" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="mailto:aqasbi.ghita@gmail.com" target="_blank"><ion-icon name="logo-google"></ion-icon></a></li>
         </ul>
     </footer>
 
@@ -158,9 +161,12 @@ const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
 function mobilemenu() {
     mobileMenuOverlay.classList.toggle('active');
+    header.classList.add('scrolled');
+
 }
 
 mobileMenuOverlay.addEventListener('click', () => {
+    header.classList.remove('scrolled');
     mobileMenuOverlay.classList.remove('active');
 });
 </script>
